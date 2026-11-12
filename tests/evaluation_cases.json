@@ -1,0 +1,184 @@
+[
+  {
+    "id": "general_javascript",
+    "domain": "general_knowledge",
+    "turns": [
+      {
+        "message": "What is JavaScript?",
+        "expected_concepts": ["programming language", "web development"],
+        "avoid": ["Java is the same language"]
+      }
+    ]
+  },
+  {
+    "id": "general_ai",
+    "domain": "general_knowledge",
+    "turns": [
+      {
+        "message": "What is artificial intelligence?",
+        "expected_concepts": ["computer systems", "tasks associated with intelligence"],
+        "avoid": ["AI is always conscious"]
+      }
+    ]
+  },
+  {
+    "id": "general_ram_rom",
+    "domain": "computer_fundamentals",
+    "turns": [
+      {
+        "message": "Explain RAM vs ROM.",
+        "expected_concepts": ["volatile working memory", "non-volatile storage"],
+        "avoid": ["ROM is always impossible to rewrite"]
+      }
+    ]
+  },
+  {
+    "id": "engineering_entc",
+    "domain": "engineering",
+    "turns": [
+      {
+        "message": "Tell me about ENTC Branch.",
+        "expected_concepts": ["Electronics and Telecommunication Engineering"],
+        "avoid": ["unrelated organizations or entertainment"]
+      }
+    ]
+  },
+  {
+    "id": "engineering_embedded",
+    "domain": "engineering",
+    "turns": [
+      {
+        "message": "Explain embedded systems.",
+        "expected_concepts": ["computer built into a device", "specific task"],
+        "avoid": ["all embedded systems are real-time"]
+      }
+    ]
+  },
+  {
+    "id": "engineering_digital_communication",
+    "domain": "engineering",
+    "turns": [
+      {
+        "message": "What is digital communication?",
+        "expected_concepts": ["information represented digitally", "transmitter and receiver"],
+        "avoid": []
+      }
+    ]
+  },
+  {
+    "id": "programming_hashmap_java",
+    "domain": "programming",
+    "turns": [
+      {
+        "message": "How does HashMap work in Java?",
+        "expected_concepts": ["key-value mapping", "hashing"],
+        "avoid": ["keys are stored in sorted order"]
+      }
+    ]
+  },
+  {
+    "id": "programming_array",
+    "domain": "programming",
+    "turns": [
+      {
+        "message": "What is an array?",
+        "expected_concepts": ["indexed collection", "elements"],
+        "avoid": ["arrays have identical resizing behavior in all languages"]
+      }
+    ]
+  },
+  {
+    "id": "programming_binary_search",
+    "domain": "programming",
+    "turns": [
+      {
+        "message": "Explain binary search.",
+        "expected_concepts": ["sorted input", "halves the search interval"],
+        "avoid": ["works on any unsorted array"]
+      }
+    ]
+  },
+  {
+    "id": "ambiguous_dsa_programming",
+    "domain": "ambiguity_programming",
+    "turns": [
+      {"message": "I am learning Java and data structures."},
+      {
+        "message": "What is DSA?",
+        "expected_concepts": ["Data Structures and Algorithms"],
+        "avoid": ["Digital Signature Algorithm"]
+      }
+    ]
+  },
+  {
+    "id": "ambiguous_dsa_cryptography",
+    "domain": "ambiguity_cryptography",
+    "turns": [
+      {"message": "I am studying cryptography and digital signatures."},
+      {
+        "message": "What is DSA?",
+        "expected_concepts": ["Digital Signature Algorithm"],
+        "avoid": ["Data Structures and Algorithms"]
+      }
+    ]
+  },
+  {
+    "id": "ambiguous_api_software",
+    "domain": "ambiguity_software",
+    "turns": [
+      {"message": "I am building a web application."},
+      {
+        "message": "What does API mean?",
+        "expected_concepts": ["Application Programming Interface", "software components communicate"],
+        "avoid": []
+      }
+    ]
+  },
+  {
+    "id": "continuity_java_dsa_example",
+    "domain": "conversation_continuity",
+    "turns": [
+      {"message": "I am learning Java."},
+      {"message": "Explain arrays."},
+      {"message": "What is DSA?"},
+      {
+        "message": "Give me one practical example.",
+        "expected_concepts": ["Java", "array", "algorithm or data structure"],
+        "avoid": ["an unrelated example"]
+      }
+    ]
+  },
+  {
+    "id": "general_mobile_phones",
+    "domain": "everyday_technology",
+    "turns": [
+      {
+        "message": "Explain how mobile phones work.",
+        "expected_concepts": ["radio communication", "cellular network"],
+        "avoid": []
+      }
+    ]
+  },
+  {
+    "id": "engineering_student_project",
+    "domain": "productivity",
+    "turns": [
+      {
+        "message": "Suggest a practical project for an electronics engineering student.",
+        "expected_concepts": ["specific project", "main components or steps"],
+        "avoid": ["unrelated software-only project"]
+      }
+    ]
+  },
+  {
+    "id": "general_ai_vs_ml",
+    "domain": "technology",
+    "turns": [
+      {
+        "message": "What is the difference between AI and machine learning?",
+        "expected_concepts": ["AI is broader", "machine learning is a subset or approach"],
+        "avoid": ["AI and ML are exact synonyms"]
+      }
+    ]
+  }
+]

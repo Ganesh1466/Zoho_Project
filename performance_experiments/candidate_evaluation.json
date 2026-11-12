@@ -1,0 +1,769 @@
+{
+  "label": "candidate",
+  "evaluated_at_utc": "2026-11-12T06:07:14.509842+00:00",
+  "base_url": "http://127.0.0.1:8765",
+  "max_new_tokens": 128,
+  "rubric_scale": "1-5; complete manual review before claiming quality scores",
+  "cases": [
+    {
+      "id": "general_javascript",
+      "domain": "general_knowledge",
+      "turns": [
+        {
+          "turn": 1,
+          "user": "What is JavaScript?",
+          "expected_concepts": [
+            "programming language",
+            "web development"
+          ],
+          "avoid": [
+            "Java is the same language"
+          ],
+          "assistant": "JavaScript is a programming language that is commonly used to add interactive elements to websites. It allows for the creation of dynamic web pages and can be embedded into HTML documents using tags. JavaScript runs on the client side (on the user's device) and can interact with the browser and the user's system. It is widely used for creating web applications, games, and other interactive content.",
+          "metrics": {
+            "ttft_ms": 17556.158203125,
+            "tpot_ms": 208.2049560546875,
+            "throughput_tokens_per_second": 4.802959442138672,
+            "generation_time_ms": 33417.61328125,
+            "inference_time_ms": 33314.859375,
+            "input_tokens": 140,
+            "output_tokens": 77,
+            "context_tokens": 140,
+            "recent_turns_in_context": 1,
+            "summarized_turns": 0,
+            "context_preparation_ms": 74.40820000010717,
+            "output_limit_reached": false
+          }
+        }
+      ],
+      "manual_review_scores_1_to_5": {
+        "context_relevance": null,
+        "factual_correctness": null,
+        "completeness": null,
+        "clarity": null,
+        "hallucination": null,
+        "conversation_continuity": null
+      }
+    },
+    {
+      "id": "general_ai",
+      "domain": "general_knowledge",
+      "turns": [
+        {
+          "turn": 1,
+          "user": "What is artificial intelligence?",
+          "expected_concepts": [
+            "computer systems",
+            "tasks associated with intelligence"
+          ],
+          "avoid": [
+            "AI is always conscious"
+          ],
+          "assistant": "Artificial Intelligence (AI) refers to the simulation of human intelligence processes by machines, especially computer systems. These processes include learning, reasoning, and self-correction. AI systems can be trained on large datasets to recognize patterns and make decisions without being explicitly programmed for each scenario.",
+          "metrics": {
+            "ttft_ms": 986.9110107421875,
+            "tpot_ms": 193.84791564941406,
+            "throughput_tokens_per_second": 5.1586833000183105,
+            "generation_time_ms": 11694.94921875,
+            "inference_time_ms": 11612.2041015625,
+            "input_tokens": 141,
+            "output_tokens": 56,
+            "context_tokens": 141,
+            "recent_turns_in_context": 1,
+            "summarized_turns": 0,
+            "context_preparation_ms": 33.840000000054715,
+            "output_limit_reached": false
+          }
+        }
+      ],
+      "manual_review_scores_1_to_5": {
+        "context_relevance": null,
+        "factual_correctness": null,
+        "completeness": null,
+        "clarity": null,
+        "hallucination": null,
+        "conversation_continuity": null
+      }
+    },
+    {
+      "id": "general_ram_rom",
+      "domain": "computer_fundamentals",
+      "turns": [
+        {
+          "turn": 1,
+          "user": "Explain RAM vs ROM.",
+          "expected_concepts": [
+            "volatile working memory",
+            "non-volatile storage"
+          ],
+          "avoid": [
+            "ROM is always impossible to rewrite"
+          ],
+          "assistant": "RAM (Random Access Memory) and ROM (Read Only Memory) are both types of computer memory, but they work differently and serve different purposes.\n\n**RAM:**\n- **What it is:** RAM is temporary storage for data that your computer can access quickly.\n- **How it works:** Data stored in RAM can be accessed by the CPU at any time, hence the term \"random\" access. This means you can read from or write to any location in the RAM.\n- **Usage:** It holds programs and data that are currently running on your computer.\n- **Re-writable:** When you turn off your computer, all data in",
+          "metrics": {
+            "ttft_ms": 582.1116943359375,
+            "tpot_ms": 185.859130859375,
+            "throughput_tokens_per_second": 5.38041877746582,
+            "generation_time_ms": 24226.021484375,
+            "inference_time_ms": 24120.880859375,
+            "input_tokens": 142,
+            "output_tokens": 128,
+            "context_tokens": 142,
+            "recent_turns_in_context": 1,
+            "summarized_turns": 0,
+            "context_preparation_ms": 2.6144000003114343,
+            "output_limit_reached": true
+          }
+        }
+      ],
+      "manual_review_scores_1_to_5": {
+        "context_relevance": null,
+        "factual_correctness": null,
+        "completeness": null,
+        "clarity": null,
+        "hallucination": null,
+        "conversation_continuity": null
+      }
+    },
+    {
+      "id": "engineering_entc",
+      "domain": "engineering",
+      "turns": [
+        {
+          "turn": 1,
+          "user": "Tell me about ENTC Branch.",
+          "expected_concepts": [
+            "Electronics and Telecommunication Engineering"
+          ],
+          "avoid": [
+            "unrelated organizations or entertainment"
+          ],
+          "assistant": "I'm sorry, I'm not sure what you mean by \"ENTC Branch.\" Could you provide more context or clarify what type of organization or branch this is? ENTC could refer to different things depending on the field or industry.",
+          "metrics": {
+            "ttft_ms": 738.7308349609375,
+            "tpot_ms": 180.39537048339844,
+            "throughput_tokens_per_second": 5.543379306793213,
+            "generation_time_ms": 9218.083984375,
+            "inference_time_ms": 9190.5654296875,
+            "input_tokens": 143,
+            "output_tokens": 48,
+            "context_tokens": 143,
+            "recent_turns_in_context": 1,
+            "summarized_turns": 0,
+            "context_preparation_ms": 4.040299999360286,
+            "output_limit_reached": false
+          }
+        }
+      ],
+      "manual_review_scores_1_to_5": {
+        "context_relevance": null,
+        "factual_correctness": null,
+        "completeness": null,
+        "clarity": null,
+        "hallucination": null,
+        "conversation_continuity": null
+      }
+    },
+    {
+      "id": "engineering_embedded",
+      "domain": "engineering",
+      "turns": [
+        {
+          "turn": 1,
+          "user": "Explain embedded systems.",
+          "expected_concepts": [
+            "computer built into a device",
+            "specific task"
+          ],
+          "avoid": [
+            "all embedded systems are real-time"
+          ],
+          "assistant": "Embedded systems are computer systems that integrate hardware and software to perform specific functions within larger devices or systems. They are designed to be small, low-power, and have limited resources compared to general-purpose computers. Here’s a breakdown of key aspects:\n\n1. **Hardware**: This includes microcontrollers, microprocessors, sensors, actuators, and other components necessary for the system's functionality.\n2. __________: This involves the software that runs on the hardware. It is tailored to the specific application and can include operating systems, drivers, firmware, and application programs.\n3. **Applications**: Embedded systems are used in various applications such as automotive (",
+          "metrics": {
+            "ttft_ms": 627.0574340820312,
+            "tpot_ms": 176.50807189941406,
+            "throughput_tokens_per_second": 5.665463447570801,
+            "generation_time_ms": 23095.86328125,
+            "inference_time_ms": 22974.8671875,
+            "input_tokens": 141,
+            "output_tokens": 128,
+            "context_tokens": 141,
+            "recent_turns_in_context": 1,
+            "summarized_turns": 0,
+            "context_preparation_ms": 6.082200000491866,
+            "output_limit_reached": true
+          }
+        }
+      ],
+      "manual_review_scores_1_to_5": {
+        "context_relevance": null,
+        "factual_correctness": null,
+        "completeness": null,
+        "clarity": null,
+        "hallucination": null,
+        "conversation_continuity": null
+      }
+    },
+    {
+      "id": "engineering_digital_communication",
+      "domain": "engineering",
+      "turns": [
+        {
+          "turn": 1,
+          "user": "What is digital communication?",
+          "expected_concepts": [
+            "information represented digitally",
+            "transmitter and receiver"
+          ],
+          "avoid": [],
+          "assistant": "Digital communication refers to the transmission of information in discrete units, or bits, over a communication channel using a digital encoding scheme. This involves converting messages into binary form (0s and 1s) for processing and transmission, which can then be decoded back into the original message at the receiving end. Digital communication systems use electronic signals to transmit these bits, often over wired or wireless networks. Examples include emails, internet browsing, and mobile phone calls.",
+          "metrics": {
+            "ttft_ms": 609.010009765625,
+            "tpot_ms": 161.3407745361328,
+            "throughput_tokens_per_second": 6.198061466217041,
+            "generation_time_ms": 15130.4404296875,
+            "inference_time_ms": 15082.69921875,
+            "input_tokens": 141,
+            "output_tokens": 91,
+            "context_tokens": 141,
+            "recent_turns_in_context": 1,
+            "summarized_turns": 0,
+            "context_preparation_ms": 3.2725000000937143,
+            "output_limit_reached": false
+          }
+        }
+      ],
+      "manual_review_scores_1_to_5": {
+        "context_relevance": null,
+        "factual_correctness": null,
+        "completeness": null,
+        "clarity": null,
+        "hallucination": null,
+        "conversation_continuity": null
+      }
+    },
+    {
+      "id": "programming_hashmap_java",
+      "domain": "programming",
+      "turns": [
+        {
+          "turn": 1,
+          "user": "How does HashMap work in Java?",
+          "expected_concepts": [
+            "key-value mapping",
+            "hashing"
+          ],
+          "avoid": [
+            "keys are stored in sorted order"
+          ],
+          "assistant": "A HashMap in Java is an implementation of the Map interface that uses a hash function to map keys to values. Here’s how it works:\n\n1. **Hash Function**: When you insert a key-value pair into a HashMap, the key is passed through a hash function which returns an index within the array where the value will be stored. This index is used to determine the bucket where the data will be placed.\n\n2. **Bucket Array**: The HashMap uses an underlying array (or arrays) to store the key-value pairs. Each bucket in this array can contain multiple entries, known as \"buckets\" or \"chains\". If the bucket gets",
+          "metrics": {
+            "ttft_ms": 537.7388916015625,
+            "tpot_ms": 161.9987335205078,
+            "throughput_tokens_per_second": 6.172887802124023,
+            "generation_time_ms": 21112.263671875,
+            "inference_time_ms": 21039.65625,
+            "input_tokens": 143,
+            "output_tokens": 128,
+            "context_tokens": 143,
+            "recent_turns_in_context": 1,
+            "summarized_turns": 0,
+            "context_preparation_ms": 3.1607000000803964,
+            "output_limit_reached": true
+          }
+        }
+      ],
+      "manual_review_scores_1_to_5": {
+        "context_relevance": null,
+        "factual_correctness": null,
+        "completeness": null,
+        "clarity": null,
+        "hallucination": null,
+        "conversation_continuity": null
+      }
+    },
+    {
+      "id": "programming_array",
+      "domain": "programming",
+      "turns": [
+        {
+          "turn": 1,
+          "user": "What is an array?",
+          "expected_concepts": [
+            "indexed collection",
+            "elements"
+          ],
+          "avoid": [
+            "arrays have identical resizing behavior in all languages"
+          ],
+          "assistant": "An array is a data structure that stores a collection of elements of the same type in contiguous memory locations. Each element in the array can be accessed using an index, typically starting from 0. For example, an array of integers might look like this:\n\n```python\nnumbers = [1, 2, 3, 4, 5]\n```\n\nHere, `numbers[0]` would be `1`, `numbers[1]` would be `2`, and so on.",
+          "metrics": {
+            "ttft_ms": 540.6044311523438,
+            "tpot_ms": 153.8763427734375,
+            "throughput_tokens_per_second": 6.498724937438965,
+            "generation_time_ms": 16121.2177734375,
+            "inference_time_ms": 16028.6298828125,
+            "input_tokens": 141,
+            "output_tokens": 102,
+            "context_tokens": 141,
+            "recent_turns_in_context": 1,
+            "summarized_turns": 0,
+            "context_preparation_ms": 1.9105999999737833,
+            "output_limit_reached": false
+          }
+        }
+      ],
+      "manual_review_scores_1_to_5": {
+        "context_relevance": null,
+        "factual_correctness": null,
+        "completeness": null,
+        "clarity": null,
+        "hallucination": null,
+        "conversation_continuity": null
+      }
+    },
+    {
+      "id": "programming_binary_search",
+      "domain": "programming",
+      "turns": [
+        {
+          "turn": 1,
+          "user": "Explain binary search.",
+          "expected_concepts": [
+            "sorted input",
+            "halves the search interval"
+          ],
+          "avoid": [
+            "works on any unsorted array"
+          ],
+          "assistant": "A binary search is an efficient algorithm for finding an item from a sorted list of items. It works by repeatedly dividing the search interval in half. Here’s how it works step-by-step:\n\n1. **Initial Interval**: The search starts with the entire array (or list) as the interval to be searched.\n2. **Finding the Middle Element**: Calculate the middle element of the current interval. If the value at this middle element matches the target value, the search is successful.\n3. **Dividing the Interval**:\n   - If the middle element is greater than the target, then the target must be in the left half of the",
+          "metrics": {
+            "ttft_ms": 534.80029296875,
+            "tpot_ms": 153.04920959472656,
+            "throughput_tokens_per_second": 6.533846378326416,
+            "generation_time_ms": 19972.744140625,
+            "inference_time_ms": 19908.376953125,
+            "input_tokens": 141,
+            "output_tokens": 128,
+            "context_tokens": 141,
+            "recent_turns_in_context": 1,
+            "summarized_turns": 0,
+            "context_preparation_ms": 2.777800000330899,
+            "output_limit_reached": true
+          }
+        }
+      ],
+      "manual_review_scores_1_to_5": {
+        "context_relevance": null,
+        "factual_correctness": null,
+        "completeness": null,
+        "clarity": null,
+        "hallucination": null,
+        "conversation_continuity": null
+      }
+    },
+    {
+      "id": "ambiguous_dsa_programming",
+      "domain": "ambiguity_programming",
+      "turns": [
+        {
+          "turn": 1,
+          "user": "I am learning Java and data structures.",
+          "expected_concepts": [],
+          "avoid": [],
+          "assistant": "Great! Learning Java and data structures is a good start for understanding how to manage and manipulate data effectively. What specific aspect of Java or data structures are you finding challenging?",
+          "metrics": {
+            "ttft_ms": 578.0405883789062,
+            "tpot_ms": 154.35012817382812,
+            "throughput_tokens_per_second": 6.478776454925537,
+            "generation_time_ms": 5826.828125,
+            "inference_time_ms": 5807.77490234375,
+            "input_tokens": 144,
+            "output_tokens": 35,
+            "context_tokens": 144,
+            "recent_turns_in_context": 1,
+            "summarized_turns": 0,
+            "context_preparation_ms": 3.8903999993635807,
+            "output_limit_reached": false
+          }
+        },
+        {
+          "turn": 2,
+          "user": "What is DSA?",
+          "expected_concepts": [
+            "Data Structures and Algorithms"
+          ],
+          "avoid": [
+            "Digital Signature Algorithm"
+          ],
+          "assistant": "DSA stands for Data Structures and Algorithms. It is a fundamental concept in computer science that deals with the design and analysis of algorithms and the data structures used to store and manipulate data. This field includes various types of data structures like arrays, linked lists, stacks, queues, trees, graphs, and more. It also covers algorithms for searching, sorting, and manipulating these structures. If you need more detailed information on any specific data structure or algorithm, feel free to ask!",
+          "metrics": {
+            "ttft_ms": 567.3309936523438,
+            "tpot_ms": 156.18353271484375,
+            "throughput_tokens_per_second": 6.402723789215088,
+            "generation_time_ms": 15249.556640625,
+            "inference_time_ms": 15192.4716796875,
+            "input_tokens": 193,
+            "output_tokens": 95,
+            "context_tokens": 193,
+            "recent_turns_in_context": 2,
+            "summarized_turns": 0,
+            "context_preparation_ms": 4.487199999857694,
+            "output_limit_reached": false
+          }
+        }
+      ],
+      "manual_review_scores_1_to_5": {
+        "context_relevance": null,
+        "factual_correctness": null,
+        "completeness": null,
+        "clarity": null,
+        "hallucination": null,
+        "conversation_continuity": null
+      }
+    },
+    {
+      "id": "ambiguous_dsa_cryptography",
+      "domain": "ambiguity_cryptography",
+      "turns": [
+        {
+          "turn": 1,
+          "user": "I am studying cryptography and digital signatures.",
+          "expected_concepts": [],
+          "avoid": [],
+          "assistant": "Great! What specific aspect of cryptography and digital signatures are you focusing on? Digital signatures involve creating and verifying signatures using public key cryptography. If you need help with a particular concept or have a specific question, feel free to ask!",
+          "metrics": {
+            "ttft_ms": 650.14208984375,
+            "tpot_ms": 154.266845703125,
+            "throughput_tokens_per_second": 6.482274055480957,
+            "generation_time_ms": 7747.14501953125,
+            "inference_time_ms": 7722.43505859375,
+            "input_tokens": 144,
+            "output_tokens": 47,
+            "context_tokens": 144,
+            "recent_turns_in_context": 1,
+            "summarized_turns": 0,
+            "context_preparation_ms": 2.312800000254356,
+            "output_limit_reached": false
+          }
+        },
+        {
+          "turn": 2,
+          "user": "What is DSA?",
+          "expected_concepts": [
+            "Digital Signature Algorithm"
+          ],
+          "avoid": [
+            "Data Structures and Algorithms"
+          ],
+          "assistant": "DSA stands for Digital Signature Algorithm. It is an algorithm used for creating digital signatures. It is based on the discrete logarithm problem and is part of the Elliptic Curve Cryptography (ECC) family. DSA is designed to provide both digital signatures and key encapsulation mechanisms. If you need more detailed information about how DSA works or its usage, let me know!",
+          "metrics": {
+            "ttft_ms": 571.75537109375,
+            "tpot_ms": 175.88589477539062,
+            "throughput_tokens_per_second": 5.68550443649292,
+            "generation_time_ms": 14115.6298828125,
+            "inference_time_ms": 14075.8134765625,
+            "input_tokens": 205,
+            "output_tokens": 78,
+            "context_tokens": 205,
+            "recent_turns_in_context": 2,
+            "summarized_turns": 0,
+            "context_preparation_ms": 2.6298000002498156,
+            "output_limit_reached": false
+          }
+        }
+      ],
+      "manual_review_scores_1_to_5": {
+        "context_relevance": null,
+        "factual_correctness": null,
+        "completeness": null,
+        "clarity": null,
+        "hallucination": null,
+        "conversation_continuity": null
+      }
+    },
+    {
+      "id": "ambiguous_api_software",
+      "domain": "ambiguity_software",
+      "turns": [
+        {
+          "turn": 1,
+          "user": "I am building a web application.",
+          "expected_concepts": [],
+          "avoid": [],
+          "assistant": "Great! What specific aspects of building a web application are you looking to understand or address? You might be thinking about the structure, design, functionality, or any particular challenges you're facing.",
+          "metrics": {
+            "ttft_ms": 548.2711181640625,
+            "tpot_ms": 156.2742919921875,
+            "throughput_tokens_per_second": 6.399004936218262,
+            "generation_time_ms": 6488.27978515625,
+            "inference_time_ms": 6467.462890625,
+            "input_tokens": 143,
+            "output_tokens": 39,
+            "context_tokens": 143,
+            "recent_turns_in_context": 1,
+            "summarized_turns": 0,
+            "context_preparation_ms": 1.7883000000438187,
+            "output_limit_reached": false
+          }
+        },
+        {
+          "turn": 2,
+          "user": "What does API mean?",
+          "expected_concepts": [
+            "Application Programming Interface",
+            "software components communicate"
+          ],
+          "avoid": [],
+          "assistant": "API stands for Application Programming Interface. It is a set of rules and protocols for developing software applications. Think of it as a bridge that allows different software applications to talk to each other and exchange data.",
+          "metrics": {
+            "ttft_ms": 555.3250122070312,
+            "tpot_ms": 153.98626708984375,
+            "throughput_tokens_per_second": 6.494085788726807,
+            "generation_time_ms": 6715.56982421875,
+            "inference_time_ms": 6694.701171875,
+            "input_tokens": 196,
+            "output_tokens": 41,
+            "context_tokens": 196,
+            "recent_turns_in_context": 2,
+            "summarized_turns": 0,
+            "context_preparation_ms": 2.6643999999578227,
+            "output_limit_reached": false
+          }
+        }
+      ],
+      "manual_review_scores_1_to_5": {
+        "context_relevance": null,
+        "factual_correctness": null,
+        "completeness": null,
+        "clarity": null,
+        "hallucination": null,
+        "conversation_continuity": null
+      }
+    },
+    {
+      "id": "continuity_java_dsa_example",
+      "domain": "conversation_continuity",
+      "turns": [
+        {
+          "turn": 1,
+          "user": "I am learning Java.",
+          "expected_concepts": [],
+          "avoid": [],
+          "assistant": "Great! What specific aspect of Java are you looking to learn more about? Java has many concepts such as classes, objects, arrays, loops, methods, etc. Do you have any particular questions or areas you would like to focus on?",
+          "metrics": {
+            "ttft_ms": 539.3547973632812,
+            "tpot_ms": 164.86427307128906,
+            "throughput_tokens_per_second": 6.065595626831055,
+            "generation_time_ms": 8453.4423828125,
+            "inference_time_ms": 8427.67578125,
+            "input_tokens": 141,
+            "output_tokens": 49,
+            "context_tokens": 141,
+            "recent_turns_in_context": 1,
+            "summarized_turns": 0,
+            "context_preparation_ms": 1.795999999558262,
+            "output_limit_reached": false
+          }
+        },
+        {
+          "turn": 2,
+          "user": "Explain arrays.",
+          "expected_concepts": [],
+          "avoid": [],
+          "assistant": "Certainly! Arrays in Java are used to store a fixed-size collection of elements of a single type. Here’s a basic explanation:\n\n1. **Declaration**: You declare an array by specifying the data type of the elements followed by the name of the array. For example:\n   ```java\n   int[] numbers = new int[5];\n   ```\n   This creates an integer array with 5 slots (indexes from 0 to 4).\n\n2. **Initialization**: You can initialize the array during declaration:\n   ```java\n   int[] numbers = {1, 2, 3, 4, 5};\n   ```\n",
+          "metrics": {
+            "ttft_ms": 534.0704956054688,
+            "tpot_ms": 156.2830047607422,
+            "throughput_tokens_per_second": 6.398648262023926,
+            "generation_time_ms": 20382.81640625,
+            "inference_time_ms": 20315.05078125,
+            "input_tokens": 203,
+            "output_tokens": 128,
+            "context_tokens": 203,
+            "recent_turns_in_context": 2,
+            "summarized_turns": 0,
+            "context_preparation_ms": 2.0524999999906868,
+            "output_limit_reached": true
+          }
+        },
+        {
+          "turn": 3,
+          "user": "What is DSA?",
+          "expected_concepts": [],
+          "avoid": [],
+          "assistant": "DSA stands for Data Structures and Algorithms. It is a fundamental concept in computer science that deals with how data is organized and manipulated within a system. Data structures are ways of organizing and storing data so that it can be accessed and modified efficiently. Algorithms, on the other hand, are step-by-step procedures for solving problems or performing tasks. DSA covers both the design and analysis of these structures and algorithms. If you need more detailed information about specific data structures or algorithms, feel free to ask!",
+          "metrics": {
+            "ttft_ms": 575.4326782226562,
+            "tpot_ms": 158.48793029785156,
+            "throughput_tokens_per_second": 6.309628963470459,
+            "generation_time_ms": 16266.4560546875,
+            "inference_time_ms": 16210.1962890625,
+            "input_tokens": 346,
+            "output_tokens": 100,
+            "context_tokens": 346,
+            "recent_turns_in_context": 3,
+            "summarized_turns": 0,
+            "context_preparation_ms": 46.27049999999144,
+            "output_limit_reached": false
+          }
+        },
+        {
+          "turn": 4,
+          "user": "Give me one practical example.",
+          "expected_concepts": [
+            "Java",
+            "array",
+            "algorithm or data structure"
+          ],
+          "avoid": [
+            "an unrelated example"
+          ],
+          "assistant": "Sure! A common example of using a data structure in Java is using an `ArrayList` for dynamic storage of elements. Here’s a simple example demonstrating how to use an `ArrayList` to store and manipulate a list of integers:\n\n```java\nimport java.util.ArrayList;\nimport java.util.Arrays;\n\npublic class Main {\n    public static void main(String[] args) {\n        // Creating an ArrayList of Integers\n        ArrayList<Integer> numbers = new ArrayList<>();\n        \n        // Adding elements to the ArrayList\n        numbers.add(1);\n        numbers.add(2);\n        numbers.add(3);\n        numbers.add(4);\n        numbers.add(",
+          "metrics": {
+            "ttft_ms": 594.24560546875,
+            "tpot_ms": 172.44313049316406,
+            "throughput_tokens_per_second": 5.799013137817383,
+            "generation_time_ms": 22495.1953125,
+            "inference_time_ms": 22420.873046875,
+            "input_tokens": 461,
+            "output_tokens": 128,
+            "context_tokens": 461,
+            "recent_turns_in_context": 4,
+            "summarized_turns": 0,
+            "context_preparation_ms": 2.7491999999256223,
+            "output_limit_reached": true
+          }
+        }
+      ],
+      "manual_review_scores_1_to_5": {
+        "context_relevance": null,
+        "factual_correctness": null,
+        "completeness": null,
+        "clarity": null,
+        "hallucination": null,
+        "conversation_continuity": null
+      }
+    },
+    {
+      "id": "general_mobile_phones",
+      "domain": "everyday_technology",
+      "turns": [
+        {
+          "turn": 1,
+          "user": "Explain how mobile phones work.",
+          "expected_concepts": [
+            "radio communication",
+            "cellular network"
+          ],
+          "avoid": [],
+          "assistant": "Sure! Mobile phones work by using cellular networks to transmit data and voice signals between the phone and nearby cell towers. Here’s a simplified breakdown:\n\n1. **Signal Reception**: When you turn on your mobile phone, it searches for the nearest cell tower. This is done through a process called \"cell selection\" where the phone finds the strongest signal from available towers.\n\n2. **Data Transmission**: Once connected to a cell tower, the phone can send and receive data. The phone converts digital data into radio waves that travel through the air to the tower. The tower then relays this data to another tower or directly to the internet.\n\n3",
+          "metrics": {
+            "ttft_ms": 555.7484741210938,
+            "tpot_ms": 159.43450927734375,
+            "throughput_tokens_per_second": 6.272167682647705,
+            "generation_time_ms": 20804.62890625,
+            "inference_time_ms": 20736.984375,
+            "input_tokens": 143,
+            "output_tokens": 128,
+            "context_tokens": 143,
+            "recent_turns_in_context": 1,
+            "summarized_turns": 0,
+            "context_preparation_ms": 2.128600000105507,
+            "output_limit_reached": true
+          }
+        }
+      ],
+      "manual_review_scores_1_to_5": {
+        "context_relevance": null,
+        "factual_correctness": null,
+        "completeness": null,
+        "clarity": null,
+        "hallucination": null,
+        "conversation_continuity": null
+      }
+    },
+    {
+      "id": "engineering_student_project",
+      "domain": "productivity",
+      "turns": [
+        {
+          "turn": 1,
+          "user": "Suggest a practical project for an electronics engineering student.",
+          "expected_concepts": [
+            "specific project",
+            "main components or steps"
+          ],
+          "avoid": [
+            "unrelated software-only project"
+          ],
+          "assistant": "For an electronics engineering student, a practical project that could be very beneficial is designing and building a simple audio amplifier circuit. This project will help them understand various aspects of analog electronics, including op-amp circuits, biasing techniques, and power supply design. Additionally, it will give them hands-on experience with signal processing and amplification, which are fundamental skills in electronics engineering.\n\n### Materials Needed:\n1. Op-Amp IC (e.g., LM358)\n2. Resistors\n3. Capacitors\n4. Power Supply (e.g., 9V battery)\n5. Audio Signal Source (e.g., CD player",
+          "metrics": {
+            "ttft_ms": 675.6983032226562,
+            "tpot_ms": 160.9569091796875,
+            "throughput_tokens_per_second": 6.21284294128418,
+            "generation_time_ms": 21117.919921875,
+            "inference_time_ms": 21052.96875,
+            "input_tokens": 147,
+            "output_tokens": 128,
+            "context_tokens": 147,
+            "recent_turns_in_context": 1,
+            "summarized_turns": 0,
+            "context_preparation_ms": 3.0183999997461797,
+            "output_limit_reached": true
+          }
+        }
+      ],
+      "manual_review_scores_1_to_5": {
+        "context_relevance": null,
+        "factual_correctness": null,
+        "completeness": null,
+        "clarity": null,
+        "hallucination": null,
+        "conversation_continuity": null
+      }
+    },
+    {
+      "id": "general_ai_vs_ml",
+      "domain": "technology",
+      "turns": [
+        {
+          "turn": 1,
+          "user": "What is the difference between AI and machine learning?",
+          "expected_concepts": [
+            "AI is broader",
+            "machine learning is a subset or approach"
+          ],
+          "avoid": [
+            "AI and ML are exact synonyms"
+          ],
+          "assistant": "Artificial Intelligence (AI) is a broad term that refers to the capability of machines to perform tasks that typically require human intelligence, such as visual perception, speech recognition, decision-making, and complex behavior generation. Machine learning is a subset of AI that involves algorithms that can learn from and make predictions on data, improving its accuracy with experience. So, while AI is the broader concept, machine learning is a method used within AI to improve performance over time.",
+          "metrics": {
+            "ttft_ms": 848.823486328125,
+            "tpot_ms": 182.57688903808594,
+            "throughput_tokens_per_second": 5.477144718170166,
+            "generation_time_ms": 17464.0,
+            "inference_time_ms": 17415.546875,
+            "input_tokens": 146,
+            "output_tokens": 92,
+            "context_tokens": 146,
+            "recent_turns_in_context": 1,
+            "summarized_turns": 0,
+            "context_preparation_ms": 1.6618999998172512,
+            "output_limit_reached": false
+          }
+        }
+      ],
+      "manual_review_scores_1_to_5": {
+        "context_relevance": null,
+        "factual_correctness": null,
+        "completeness": null,
+        "clarity": null,
+        "hallucination": null,
+        "conversation_continuity": null
+      }
+    }
+  ],
+  "model": "qwen-3b-openvino-int4",
+  "device": "CPU"
+}

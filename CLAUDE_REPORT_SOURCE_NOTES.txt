@@ -1,0 +1,232 @@
+LOCALMIND - SOURCE NOTES FOR PROJECT REPORT
+Prepared: 2026-11-12
+
+PURPOSE
+----------------
+Use this file as factual source material for a clear, professional project
+report. Emphasize the working local inference paths, architecture, actual
+outputs, and measured performance. Keep the report presentation-focused, but
+do not invent results or describe a measured partial response as complete.
+
+PROJECT OVERVIEW
+----------------
+Project name: LocalMind
+Goal: A general-purpose AI assistant that runs locally on a laptop.
+Primary model: Qwen2.5 3B Instruct, OpenVINO INT4.
+Inference runtime: OpenVINO GenAI 2026.4.0.0.
+Device used in the recorded runs: CPU.
+Python environment: openvino-env, Python 3.14.3.
+Web interface: web/index.html.
+Local web server: web_chat.py, bound to 127.0.0.1:8765.
+Terminal client: chat.py.
+Native client: cpp_migration/main.cpp.
+
+The existing INT4 model was retained. No model download, model replacement,
+fine-tuning, or RAG corpus was used for the recorded runs.
+
+ARCHITECTURE
+----------------
+
+                         +-----------------------------+
+                         | qwen-3b-openvino-int4       |
+                         | Local OpenVINO IR + tokenizer|
+                         +---------------+-------------+
+                                         |
+                              OpenVINO GenAI CPU
+                              LLMPipeline / generate
+                                         |
+               +-------------------------+-------------------------+
+               |                                                   |
+       +-------v--------+                                  +-------v-------+
+       | Python path    |                                  | C++ path      |
+       |                |                                  |               |
+       | chat.py        |                                  | main.cpp      |
+       | LocalMindEngine|                                  | LLMPipeline   |
+       +-------+--------+                                  +-------+-------+
+               |                                                   |
+       +-------v--------+                                          |
+       | web_chat.py    |                                          |
+       | local HTTP API |                                          |
+       +-------+--------+                                          |
+               |                                                   |
+       +-------v--------+                                          |
+       | web/index.html |                                          |
+       | Browser chat   |                                          |
+       +----------------+                                          |
+                                                                   |
+                  Both paths print locally generated responses <---+
+
+Python/browser request flow:
+Browser -> web/index.html -> web_chat.py -> LocalMindEngine ->
+OpenVINO GenAI CPU pipeline -> local Qwen model -> browser response.
+
+Python terminal request flow:
+PowerShell -> chat.py -> LocalMindEngine -> OpenVINO GenAI CPU pipeline ->
+local Qwen model -> terminal response and generation metrics.
+
+C++ request flow:
+PowerShell -> guarded C++ inference smoke executable -> OpenVINO GenAI
+LLMPipeline on CPU -> local Qwen model -> streamed terminal response and
+performance metrics.
+
+KEY COMPONENTS
+----------------
+1. localmind.py
+   - Loads the OpenVINO GenAI pipeline once per Python process.
+   - Uses the local model and CPU by default.
+   - Provides response metrics, including TTFT, TPOT, throughput, and token
+     counts.
+   - Maintains bounded conversation context with recent turns and selected
+     earlier excerpts.
+   - Uses the tokenizer end-of-turn token and a general-purpose assistant
+     prompt.
+
+2. chat.py
+   - Interactive local terminal chat client.
+   - Displays the selected model path and device after loading.
+   - Accepts /help, /clear, and /exit.
+   - Prints each answer and available performance metrics.
+
+   PowerShell launch command:
+   cd D:\Documents\Zoho_Project
+   .\openvino-env\Scripts\python.exe .\chat.py --model .\qwen-3b-openvino-int4 --device CPU --max-new-tokens 128
+
+3. web_chat.py and web/index.html
+   - Local browser interface and HTTP API.
+   - Browser conversations are kept separate; backend context is in memory.
+   - The interface displays model/device status and generation speed.
+   - Markdown is rendered in the browser.
+
+4. cpp_migration/main.cpp
+   - Simple one-prompt C++ application using the OpenVINO GenAI C++ API.
+   - Loads the existing local model on CPU and prints the response.
+
+5. cpp_migration/genai_sdk_check.cpp
+   - Instrumented C++ smoke test used for the recorded native inference.
+   - Records periodic process and system memory samples to a CSV.
+   - Uses a 3 GiB available-RAM start threshold and a 1 GiB low-memory
+     termination guard. These safeguards were left enabled and were not
+     bypassed.
+   - Uses CPU inference with two inference threads and a 32-token output cap.
+
+VERIFIED BROWSER OUTPUT
+----------------
+Prompt:
+What is JavaScript? Answer in 2-3 simple sentences.
+
+Observed answer:
+JavaScript is a scripting language that is used for adding interactive
+elements to web pages. It allows developers to create dynamic content that
+can respond to user actions like clicks or scrolls.
+
+Observed browser status: qwen-3b-openvino-int4, CPU Ready.
+Observed browser throughput: 4.72 tokens/second.
+This is one browser run, not a controlled benchmark.
+
+VERIFIED C++ OPENVINO OUTPUT
+----------------
+The guarded C++ smoke test loaded the existing Qwen INT4 model on CPU and
+generated the following response.
+
+Built-in test prompt:
+Explain what artificial intelligence is in two simple sentences.
+
+Generated response:
+Artificial Intelligence (AI) is a branch of computer science that enables
+machines to simulate human intelligence, enabling them to learn from
+experience, adapt to new inputs,
+
+Observed run details:
+- Model load: 6,682.97 ms.
+- Input tokens: 40.
+- Output tokens: 32 (the configured cap).
+- Time to first token: 13,472.5 ms.
+- Generation time: 19,725.6 ms.
+- Throughput: 4.96054 tokens/second.
+- Exit code: 0.
+
+The output above is the exact generated result. It reached the 32-token cap,
+so preserve the displayed punctuation and do not claim that this particular
+answer finished both requested sentences.
+
+MEMORY OBSERVATIONS
+----------------
+Immediately before the guarded C++ test, Windows reported 3,831 MB available,
+which exceeded the executable's 3 GiB start threshold.
+
+Results from the recorded memory trace (113 samples):
+- Peak C++ process working set: 3.58 GiB.
+- Peak C++ process private bytes: 2.03 GiB.
+- Minimum system available physical memory: 1.35 GiB.
+- The 1 GiB safety guard did not trigger.
+- Available memory after shutdown was reported as about 5,022 MB.
+
+The Task Manager Performance > Memory screenshot after the run displayed:
+- Installed memory: 12.0 GB DDR5.
+- In use: 6.8 GB of 11.7 GB (58%).
+- Available: 4.9 GB.
+
+The Task Manager screenshot was displayed in the chat but was not saved by
+the assistant as a PNG in the project. Suggested filename if saving it:
+report_screenshots\localmind_cpp_memory_tab_after_run.png
+
+MEMORY TRACE FILE
+----------------
+File:
+cpp_migration\memory_trace_cpp_20261112_1220.csv
+
+The CSV contains elapsed time, execution stage, system available RAM, process
+working set, process private bytes, and process commit charge. The commit
+charge is not pagefile I/O.
+
+REPORT SCREENSHOT PLAN
+----------------
+Suggested filenames:
+1. report_screenshots\terminal_chat_output.png
+2. report_screenshots\browser_chat_output.png
+3. report_screenshots\performance_output.png
+4. report_screenshots\openvino_cpp_output.png
+5. report_screenshots\localmind_cpp_memory_tab_after_run.png
+
+Capture status at preparation time:
+- Browser answer screenshot: captured in chat; not saved in the project folder.
+- Task Manager Memory screenshot: captured in chat; not saved in the project
+  folder.
+- Terminal, separate performance, and C++ terminal screenshots: not saved in
+  the project folder.
+
+REPORT WRITING GUIDANCE
+----------------
+- Suggested title: "LocalMind: A General-Purpose Local AI Assistant Using
+  OpenVINO GenAI".
+- Explain the project purpose, model, runtime, CPU inference, and the two
+  application paths (Python/browser and C++).
+- Include the architecture diagram above or redraw it cleanly.
+- Use the exact outputs and measurements in this document.
+- Label the C++ result as the guarded C++ smoke-test output and retain its
+  32-token cap context.
+- Distinguish the one-run browser throughput from the C++ smoke-test
+  throughput; they are separate observations, not a controlled comparison.
+- Describe the RAM screenshot as a post-run Task Manager reading. Use the CSV
+  for sampled peak values during inference.
+- Focus the narrative on implemented features and verified demonstrations.
+  Keep all claims traceable to the source files, screenshots, or CSV data.
+- Do not claim a complete terminal Python response, a complete C++ response,
+  a speedup, or a memory improvement unless additional measurements prove it.
+
+RELEVANT PROJECT FILES
+----------------
+README.md
+localmind.py
+chat.py
+web_chat.py
+web\index.html
+cpp_migration\main.cpp
+cpp_migration\genai_sdk_check.cpp
+cpp_migration\README.md
+cpp_migration\memory_trace_cpp_20261112_1220.csv
+docs\architecture.md
+docs\cpp_inference.md
+
+Python was not deleted. The C++ memory safety guard was not disabled or
+bypassed. No new model was downloaded for the recorded run.

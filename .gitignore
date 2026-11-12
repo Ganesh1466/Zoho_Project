@@ -1,0 +1,52 @@
+# Python environments and bytecode
+.venv*/
+openvino-env/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.obj
+*.exe
+*.dll
+*.lib
+*.pdb
+
+# Local model weights
+/qwen-3b-openvino-*/
+
+# Local secrets
+.env
+.env.*
+*.pem
+*.key
+
+# Generated reports and unrelated local artifacts
+/PROJECT REPORT/
+/PROJECT_REPORT.pdf
+/PROJECT_REPORT.txt
+/LocalMind_Project_Report.pdf
+/file.jpg
+
+# C++ SDK, build products, and downloaded package
+/cpp_migration/build/
+/cpp_migration/sdk/
+/cpp_migration/*.zip
+/cpp_migration/*.exe
+/cpp_migration/*.obj
+/cpp_migration/*.dll
+/cpp_migration/*.lib
+/cpp_migration/*.pdb
+/cpp_migration/*.jpe
+/cpp_migration/ram&per
+/cpp_migration/cpp_inference_final.txt
+/cpp_migration/cpp_test_output.txt
+/cpp_migration/inference_smoke.stderr.txt
+/cpp_migration/inference_smoke.stdout.txt
+/cpp_migration/memory_trace_final.csv
+
+# Performance experiment toolchains and source snapshots
+/performance_experiments/tools/
+/performance_experiments/baseline_source/
+/performance_experiments/setup_sources/
+/performance_experiments/build-genai-native/
+/performance_experiments/openvino.genai-*/
+/performance_experiments/baseline_protection_manifest.csv
